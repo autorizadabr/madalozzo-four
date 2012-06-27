@@ -1,0 +1,262 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{0B48D0AB-4278-4FD9-B117-342ADCFC74FF}</ProjectGuid>
+			<ProjectVersion>12.2</ProjectVersion>
+			<MainSource>Four.dpr</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform>Win32</Platform>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UsePackage>vclimg;vcl;vclx;dbrtl;Rave90VCL;bdertl;rtl;xmlrtl;vclactnband;VclSmp;svnui;svn;TeeUI;TeeDB;Tee;vcldb;vcldbx;vcltouch;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_110_150;Intraweb_110_150;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapClient;dbxcds;DataSnapServer;AzureCloud;DBXInterBaseDriver;DBXMySQLDriver;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;CodeSiteExpressVcl;QR5RunDXE;TCFLib150;dxCoreRS15;cxLibraryRS15;dxGDIPlusRS15;dxThemeRS15;cxEditorsRS15;cxDataRS15;cxExtEditorsRS15;dxBarRS15;dxComnRS15;dxBarDBNavRS15;dxBarExtDBItemsRS15;dxBarExtItemsRS15;dxRibbonRS15;cxBarEditItemRS15;dxdbtrRS15;dxtrmdRS15;dxmdsRS15;dxDockingRS15;dxFlowChartRS15;cxPageControlRS15;dxLayoutControlRS15;dxNavBarRS15;dxorgcRS15;dxdborRS15;cxGridRS15;cxExportRS15;cxPivotGridRS15;cxPivotGridChartRS15;cxPivotGridOLAPRS15;cxTreeListRS15;cxTreeListdxBarPopupMenuRS15;cxSchedulerRS15;cxSchedulerGridRS15;dxsbRS15;dcldxSkinsCoreRS15;dxSkinsCoreRS15;dxSkinscxPCPainterRS15;dxSkinscxScheduler3PainterRS15;dxSkinsdxDLPainterRS15;dxSkinsdxBarPainterRS15;dxSkinsdxNavBar2PainterRS15;dxSpellCheckerRS15;cxSpreadSheetRS15;cxVerticalGridRS15;dxPSCoreRS15;dxPSLnksRS15;dxPScxCommonRS15;dxPScxExtCommonRS15;dxPScxGrid6LnkRS15;dxPScxPivotGrid2LnkRS15;dxPScxScheduler3LnkRS15;dxPScxSSLnkRS15;dxPScxTL5LnkRS15;dxPScxVGridLnkRS15;dxPSTeeChartRS15;dxPSDBTeeChartRS15;dxPSdxOCLnkRS15;dxPSdxDBOCLnkRS15;dxPSdxDBTVLnkRS15;dxPSdxFCLnkRS15;dxPSdxLC2LnkRS15;dxPScxPCProdRS15;dxPsPrVwAdvRS15;dxPSPrVwRibbonRS15;dxSkinsdxRibbonPainterRS15;dxSkinXmas2008BlueRS15;dxSkinBlackRS15;dxSkinBlueRS15;dxSkinCaramelRS15;dxSkinCoffeeRS15;dxSkinDarkRoomRS15;dxSkinDarkSideRS15;dxSkinFoggyRS15;dxSkinGlassOceansRS15;dxSkiniMaginaryRS15;dxSkinLilianRS15;dxSkinLiquidSkyRS15;dxSkinLondonLiquidSkyRS15;dxSkinMcSkinRS15;dxSkinMoneyTwinsRS15;dxSkinOffice2007BlackRS15;dxSkinOffice2007BlueRS15;dxSkinOffice2007GreenRS15;dxSkinOffice2007PinkRS15;dxSkinOffice2007SilverRS15;dxSkinOffice2010BlackRS15;dxSkinOffice2010BlueRS15;dxSkinOffice2010SilverRS15;dxSkinPumpkinRS15;dxSkinSevenRS15;dxSkinSharpRS15;dxSkinSilverRS15;dxSkinSpringTimeRS15;dxSkinStardustRS15;dxSkinSummer2008RS15;dxSkinValentineRS15;ACBrDiversos;ACBrComum;ACBrSerial;synapse;ACBr_SPED;ACBr_PAF;ACBr_Sintegra;ACBr_TEFD;ACBrTCP;ACBr_Boleto;ACBr_NFe2;PCN2;ACBrCapicom;ACBr_NFSe;ACBrNFeDanfeRLpkg;RLibWinDXE;ACBr_CTe;ACBrOpenSSL</DCC_UsePackage>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_DcuOutput>.\$(Config)\$(Platform)</DCC_DcuOutput>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_ExeOutput>.\$(Config)\$(Platform)</DCC_ExeOutput>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<DCC_ExeOutput>..\exe</DCC_ExeOutput>
+			<DCC_DcuOutput>..\dcu</DCC_DcuOutput>
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="Four.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="prog0001.pas">
+				<Form>FormPrincipal</Form>
+			</DCCReference>
+			<DCCReference Include="prog0003.pas">
+				<Form>dmDados</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="prog0004.pas">
+				<Form>FormConsulta</Form>
+			</DCCReference>
+			<DCCReference Include="rotinas.pas"/>
+			<DCCReference Include="prog0005.pas">
+				<Form>FormAtendimento</Form>
+			</DCCReference>
+			<DCCReference Include="prog0006.pas">
+				<Form>FormCadPais</Form>
+			</DCCReference>
+			<DCCReference Include="prog0007.pas">
+				<Form>FormCadGrupo</Form>
+			</DCCReference>
+			<DCCReference Include="prog0008.pas">
+				<Form>FormCadSubGrupo</Form>
+			</DCCReference>
+			<DCCReference Include="prog0009.pas">
+				<Form>FormCentroCusto</Form>
+			</DCCReference>
+			<DCCReference Include="prog0010.pas">
+				<Form>FormCidade</Form>
+			</DCCReference>
+			<DCCReference Include="prog0011.pas">
+				<Form>FormFormaPagamento</Form>
+			</DCCReference>
+			<DCCReference Include="prog0012.pas">
+				<Form>FormCadTipoEntidade</Form>
+			</DCCReference>
+			<DCCReference Include="prog0013.pas">
+				<Form>FormCadSerie</Form>
+			</DCCReference>
+			<DCCReference Include="prog0014.pas">
+				<Form>FormUnidadeMedida</Form>
+			</DCCReference>
+			<DCCReference Include="prog0015.pas">
+				<Form>FormMensagem</Form>
+			</DCCReference>
+			<DCCReference Include="prog0016.pas">
+				<Form>FormNaturezaOperacao</Form>
+			</DCCReference>
+			<DCCReference Include="prog0017.pas">
+				<Form>FormCadProdutos</Form>
+			</DCCReference>
+			<DCCReference Include="prog0018.pas">
+				<Form>FormGenero</Form>
+			</DCCReference>
+			<DCCReference Include="prog0019.pas">
+				<Form>FormCadEmpresa</Form>
+			</DCCReference>
+			<DCCReference Include="prog0020.pas">
+				<Form>FormRequisicao</Form>
+			</DCCReference>
+			<DCCReference Include="prog0021.pas">
+				<Form>FormEntrSaid</Form>
+			</DCCReference>
+			<DCCReference Include="prog0022.pas">
+				<Form>FormCadEntidade</Form>
+			</DCCReference>
+			<DCCReference Include="UClsCalcNF.pas"/>
+			<DCCReference Include="prog0023.pas">
+				<Form>FormCadVeiculos</Form>
+			</DCCReference>
+			<DCCReference Include="prog0024.pas">
+				<Form>FormTabelaPreco</Form>
+			</DCCReference>
+			<DCCReference Include="prog0025.pas">
+				<Form>FormExtratoMovimento</Form>
+			</DCCReference>
+			<DCCReference Include="prog0026.pas">
+				<Form>FormRelatorio</Form>
+			</DCCReference>
+			<DCCReference Include="prog0027.pas">
+				<Form>FormEmissaoNFe</Form>
+			</DCCReference>
+			<DCCReference Include="ufrmStatus.pas">
+				<Form>frmStatus</Form>
+			</DCCReference>
+			<DCCReference Include="prog0029.pas">
+				<Form>FormCartaCorrecao</Form>
+			</DCCReference>
+			<DCCReference Include="prog0028.pas">
+				<Form>FormInutilizar</Form>
+			</DCCReference>
+			<DCCReference Include="prog0030.pas">
+				<Form>FormContingencia</Form>
+			</DCCReference>
+			<DCCReference Include="prog0032.pas">
+				<Form>FormRelEntidade</Form>
+			</DCCReference>
+			<DCCReference Include="prog0034.pas">
+				<Form>FormRelCidade</Form>
+			</DCCReference>
+			<DCCReference Include="prog0035.pas">
+				<Form>FormRelTabelaPreco</Form>
+			</DCCReference>
+			<DCCReference Include="prog0031.pas">
+				<Form>FormRelPadrao</Form>
+			</DCCReference>
+			<DCCReference Include="prog0154.pas">
+				<Form>FormAtualizaBanco</Form>
+			</DCCReference>
+			<DCCReference Include="DMScript.pas">
+				<Form>DMScriptAtualizacao</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="prog0036.pas">
+				<Form>FormParametro</Form>
+			</DCCReference>
+			<DCCReference Include="prog0037.pas">
+				<Form>FormRelExtratoMovimento</Form>
+			</DCCReference>
+			<DCCReference Include="prog0039.pas">
+				<Form>FormSituacaoEstoque</Form>
+			</DCCReference>
+			<DCCReference Include="prog0038.pas">
+				<Form>FormRelEntradaSaida</Form>
+			</DCCReference>
+			<DCCReference Include="superobject.pas"/>
+			<DCCReference Include="prog0040.pas">
+				<Form>FormCaptcha</Form>
+			</DCCReference>
+			<DCCReference Include="ILiberacaoInicial1.pas"/>
+			<DCCReference Include="prog0042.pas">
+				<Form>FormConsultaReceber</Form>
+			</DCCReference>
+			<DCCReference Include="prog0041.pas">
+				<Form>FormConsultaPagar</Form>
+			</DCCReference>
+			<DCCReference Include="prog0043.pas">
+				<Form>FormApuracaoIcms</Form>
+			</DCCReference>
+			<DCCReference Include="prog0044.pas">
+				<Form>FormLivroEntrada</Form>
+			</DCCReference>
+			<None Include="Profiling\AQtimeModule1.aqt"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Parameters>
+						<Parameters Name="IncludeSystemVars">True</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">5</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1046</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">WMF Sistemas</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.5</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName">Four</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">Four</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k150.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp150.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<Source>
+						<Source Name="MainSource">Four.dpr</Source>
+					</Source>
+					<DebugEnvironmentVariables>
+						<DebugEnvironmentVariables Name="Path">&apos;C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin;C:\Users\Public\Documents\RAD Studio\8.0\Bpl&apos;</DebugEnvironmentVariables>
+					</DebugEnvironmentVariables>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

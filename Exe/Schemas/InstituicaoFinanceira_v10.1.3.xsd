@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://iss.pontagrossa.pr.gov.br/Arquivos/InstituicaoFinanceira_v10.1.3.xsd"
+            xmlns="http://iss.pontagrossa.pr.gov.br/Arquivos/InstituicaoFinanceira_v10.1.3.xsd"
+            attributeFormDefault="unqualified"
+            elementFormDefault="qualified">
+
+  <xsd:simpleType name="tsValor">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:totalDigits value="15" />
+      <xsd:fractionDigits value="2" fixed="true" />      
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="tsInscricaoMunicipal">
+    <xsd:restriction base="xsd:int">
+      <xsd:totalDigits value="15" />
+      <xsd:whiteSpace value="collapse" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="tsVersao">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="6" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="tsMesCompetencia">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="7" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="tsCodigo">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="15" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="tsDescricao">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1000" />
+      <xsd:minLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="tsAliquota">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:totalDigits value="6" />
+      <xsd:fractionDigits value="4" />
+      <xsd:minInclusive value="0" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- 1- Grupo Contas -->
+  <!-- 2- SubGrupos Conta -->
+  <!-- 3- Plano de Contas -->
+
+  <xsd:simpleType name="tsNivel">
+    <xsd:restriction base="xsd:byte">
+      <xsd:pattern value="1|2|3" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="tcIdentificacao">
+    <xsd:sequence>
+      <xsd:element name="Identificador" type="tsInscricaoMunicipal" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="versao" type="tsVersao" minOccurs="1"  maxOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="tcConta">
+    <xsd:sequence>
+      <xsd:element name="cosif" type="tsCodigo" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="cosifDescricao" type="tsDescricao" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="codigoPlanoContas" type="tsCodigo" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="funcaoPlanoContas" type="tsDescricao" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="descricaoPlanoContas" type="tsDescricao" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="codigoAtividade" type="tsCodigo" minOccurs="0"  maxOccurs="1" />
+      <xsd:element name="aliquota" type="tsAliquota" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="receitaMes" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="valorIss" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="saldoAnterior" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="debito" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="credito" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="saldoAtual" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="NivelConta" type="tsNivel" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="ListaContas" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Conta" type="tcConta" minOccurs="1"  maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="tcDeclaracao">
+    <xsd:sequence>
+      <xsd:element name="mesReferencia" type="tsMesCompetencia" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="cosif" type="tsCodigo" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="cosifDescricao" type="tsDescricao" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="codigoPlanoContas" type="tsCodigo" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="funcaoPlanoContas" type="tsDescricao" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="descricaoPlanoContas" type="tsDescricao" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="codigoAtividade" type="tsCodigo" minOccurs="0"  maxOccurs="1" />
+      <xsd:element name="aliquota" type="tsAliquota" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="receitaMes" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="valorIss" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="saldoAnterior" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="debito" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="credito" type="tsValor" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="saldoAtual" type="tsValor" minOccurs="1"  maxOccurs="1" />
+	  <xsd:element name="NivelConta" type="tsNivel" minOccurs="1"  maxOccurs="1" />
+      <xsd:element name="ListaContas" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Conta" type="tcConta" minOccurs="1"  maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:element name="ImportacaoDeclaracoes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Identificacao" type="tcIdentificacao" minOccurs="1" maxOccurs="1" />
+        <xsd:element name="ListaDeclaracoes" minOccurs="1" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Declaracao" type="tcDeclaracao" minOccurs="1"  maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
